@@ -16,7 +16,7 @@ const chartTypes: ChartType[] = [
   "areaspline",
   "scatter",
 ];
-const maxAmount = 500;
+const maxAmount = 1000;
 
 let confirmButton: HTMLElement | null;
 let exportButton: HTMLButtonElement | null;
@@ -164,8 +164,18 @@ async function generatePng(el: HTMLElement): Promise<string> {
 
 // 📄 Word export
 async function exportWord(images: ImageAndVector[], filename: string): Promise<void> {
-  const sections = images.map((image) => ({
+  const sections = images.map((image, index) => ({
     children: [
+      new Paragraph({
+        text: `Chart nummer: ${index + 1}`,
+        heading: "Heading2",
+      }),
+      new Paragraph({
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus purus mi. Cras tortor mauris, auctor in imperdiet ac, varius sed augue. Suspendisse diam lacus, molestie et volutpat at, porttitor in dolor. Praesent ex nulla, ultrices eget aliquam sit amet, euismod a massa. Mauris in justo aliquet, facilisis elit venenatis, placerat lectus. Sed varius lacus eu mollis scelerisque. Fusce suscipit nisl at molestie fringilla. Nulla in metus id mauris viverra placerat vitae id tellus.",
+        spacing: {
+          after: 500,
+        },
+      }),
       new Paragraph({
         children: [
           new ImageRun({
@@ -175,6 +185,11 @@ async function exportWord(images: ImageAndVector[], filename: string): Promise<v
             fallback: {
               type: "png",
               data: image.png,
+            },
+            altText: {
+              title: "This is an ultimate title",
+              description: "This is an ultimate image",
+              name: "My Ultimate Image",
             },
           }),
         ],

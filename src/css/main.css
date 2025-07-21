@@ -55,8 +55,25 @@ body {
   gap: 0.5rem;
 }
 
+button.export {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+button.export:disabled svg {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+button.export svg {
+  height: 2rem;
+  width: auto;
+}
+
 @media (width < 64rem) {
   button.export {
+    justify-content: center;
     width: 100%;
   }
 }
@@ -71,10 +88,12 @@ body {
   top: 0;
   left: 0;
   place-content: center;
+  padding: 0 1rem;
 }
 
 .loading-layer span.loader {
   font-size: 1.25rem;
+  text-align: center;
   color: white;
 }
 
