@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>word-charts</title>
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/button.css" />
+    <link rel="stylesheet" href="/src/css/input.css" />
+  </head>
+  <body>
+    <div id="charts" class="charts"></div>
+    <div class="controls">
+      <div class="form">
+        <input type="number" min="1" max="500" id="graph-count" name="graph-count" />
+        <button id="confirm">Bevestig</button>
+      </div>
+      <div>
+        <button class="export" id="export" disabled>Exporteer data →</button>
+      </div>
+    </div>
+    <div id="loading" class="loading-layer">
+      <span id="indicator" class="loader"></span>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  </body>
+</html>

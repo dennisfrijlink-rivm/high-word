@@ -1,0 +1,29 @@
+input {
+  height: auto;
+  width: 100%;
+  max-width: 20rem;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  border: 0.09375rem solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  field-sizing: content;
+  font-size: 1rem;
+}
+
+@media (width >= 64rem) {
+  input {
+    min-width: 20rem;
+  }
+}
+
+input:hover {
+  border: 0.125rem solid lightgrey;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+}
+
+input:focus {
+  border: 0.125rem solid grey;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+}
